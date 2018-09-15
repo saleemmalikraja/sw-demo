@@ -8,10 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ngsw-config": "node_modules/.bin/ngsw-config dist ./ngsw-config.json",
-    "ngsw-copy": "copy node_modules\\@angular\\service-worker\\ngsw-worker.js dist\\",
+    "ngsw-config": "node_modules/.bin/ngsw-config dist\\sw-demo ./ngsw-config.json",
+    "ngsw-copy": "copy node_modules\\@angular\\service-worker\\ngsw-worker.js dist\\sw-demo",
     "build-prod-ngsw": "ng build --prod && npm run ngsw-config && npm run ngsw-copy",
-    "serve-prod-ngsw": "npm run build-prod-ngsw && http-server dist\\sw-demo -a localhost -p 4200 -c-1 --ssl -C ssl\\server.crt -K ssl\\server.key"
+    "serve-prod-ngsw": "npm run build-prod-ngsw && http-server dist\\sw-demo -a localhost -p 4200 -c-1 --ssl -C dist\\sw-demo\\ssl\\server.crt -K dist\\sw-demo\\ssl\\server.key"
   },
   "private": true,
   "dependencies": {
