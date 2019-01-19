@@ -1,10 +1,14 @@
 {
   "index": "/index.html",
-  "assetGroups": [
+  "assetGroups": [  
     {
       "name": "app",
       "installMode": "prefetch",
       "resources": {
+        "urls": [
+          "https://fonts.googleapis.com/**",
+          "https://fonts.gstatic.com/**"
+        ],
         "files": [
           "/favicon.ico",
           "/index.html",
@@ -20,6 +24,18 @@
         "files": [
           "/assets/**"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "tasks-users-api",
+      "urls": ["/v2","/api"],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 50,
+        "maxAge": "1h",
+        "timeout": "10s"
       }
     }
   ]
