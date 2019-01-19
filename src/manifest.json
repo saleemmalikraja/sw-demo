@@ -2,6 +2,8 @@
   "name": "sw-demo",
   "short_name": "sw-demo",
   "theme_color": "#1976d2",
+  "gcm_sender_id": "482941778795",
+  "gcm_sender_id_comment": "Do not change the GCM Sender ID",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",

@@ -10,7 +10,9 @@
     "e2e": "ng e2e",
     "ngsw-config": "node_modules/.bin/ngsw-config dist\\sw-demo ./ngsw-config.json",
     "ngsw-copy": "copy node_modules\\@angular\\service-worker\\ngsw-worker.js dist\\sw-demo",
-    "build-prod-ngsw": "ng build --prod && npm run ngsw-config && npm run ngsw-copy",
+    "oneSignalUpdater-copy": "copy src\\assets\\OneSignalSDKUpdaterWorker.js dist\\sw-demo",
+    "oneSignalWorker-copy": "copy src\\assets\\OneSignalSDKWorker.js dist\\sw-demo",
+    "build-prod-ngsw": "ng build --prod && npm run ngsw-config && npm run ngsw-copy && npm run oneSignalUpdater-copy && npm run oneSignalWorker-copy",
     "serve-prod-ngsw": "npm run build-prod-ngsw && http-server dist\\sw-demo -a localhost -p 4200 -c-1 --ssl -C dist\\sw-demo\\ssl\\server.crt -K dist\\sw-demo\\ssl\\server.key"
   },
   "private": true,
