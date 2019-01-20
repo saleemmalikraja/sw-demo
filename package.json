@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "deploy": "firebase deploy --only hosting",
     "ngsw-config": "node_modules/.bin/ngsw-config dist\\sw-demo ./ngsw-config.json",
     "ngsw-copy": "copy node_modules\\@angular\\service-worker\\ngsw-worker.js dist\\sw-demo",
     "oneSignalUpdater-copy": "copy src\\assets\\OneSignalSDKUpdaterWorker.js dist\\sw-demo",
