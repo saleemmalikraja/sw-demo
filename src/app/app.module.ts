@@ -7,13 +7,15 @@ import { environment } from '../environments/environment';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { AddBlogComponent } from './add-blog/add-blog.component';
+import { EditBlogdetailComponent } from './edit-blogdetail/edit-blogdetail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlogListComponent,
     BlogDetailComponent,
-    AddBlogComponent
+    AddBlogComponent,
+    EditBlogdetailComponent
   ],
   imports: [
     BrowserModule,
