@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -11,6 +12,7 @@ import { EditBlogdetailComponent } from './edit-blogdetail/edit-blogdetail.compo
 
 // Routing imports
 import { RouterModule, Routes } from '@angular/router';
+import { AngularMaterialImports } from './app.material.imports';
 
 
 const appRoutes: Routes = [
@@ -50,8 +52,11 @@ const appRoutes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    FormsModule,
+    ReactiveFormsModule,
+    ...AngularMaterialImports
   ],
   providers: [],
   bootstrap: [AppComponent]
