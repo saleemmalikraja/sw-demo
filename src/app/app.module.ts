@@ -38,7 +38,11 @@ const appRoutes: Routes = [
     data: { title: 'Edit Blog' }
   },
   { path: '',
-    redirectTo: '/blogs-list',
+    redirectTo: '/blog-list',
+    pathMatch: 'full'
+  },
+  { path: '**',
+    redirectTo: '/blog-list',
     pathMatch: 'full'
   }
 ];

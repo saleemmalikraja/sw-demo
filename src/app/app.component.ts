@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import firestore from 'firebase/firestore';
 
-const settings = { timestampsInSnapshots: true };
+// const settings = { timestampsInSnapshots: true };
 // Initialization configuration for Firebase
 const config = {
   apiKey: 'AIzaSyBHqoWx4xqrk5DmgkVHBwYtqFWVnWGDtc4',
@@ -26,6 +26,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     // Inizalizing firebase
     firebase.initializeApp(config);
-    firebase.firestore().settings(settings);
+    // firebase.firestore().settings(settings);
   }
 }

@@ -13,16 +13,17 @@ export interface Blog {
   styleUrls: ['./blog-detail.component.css']
 })
 export class BlogDetailComponent implements OnInit {
-  blog: Blog ;
+  blog: Blog;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private appService: AppService
-  ) {}
+  ) { }
 
   ngOnInit() {
-    this.getBlogDetailById(this.route.snapshot.params['id']);}
+    this.getBlogDetailById(this.route.snapshot.params['id']);
+  }
 
   getBlogDetailById(id) {
     this.appService.getBlogDetailById(id).subscribe(data => {
