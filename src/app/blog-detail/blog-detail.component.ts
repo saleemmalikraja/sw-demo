@@ -1,15 +1,43 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { AppService } from '../app.service';
+export interface Blog {
+  key: string;
+  title: string;
+  blog_url: string;
+  author: string;
+}
 @Component({
   selector: 'app-blog-detail',
   templateUrl: './blog-detail.component.html',
   styleUrls: ['./blog-detail.component.css']
 })
 export class BlogDetailComponent implements OnInit {
+  blog: Blog ;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private appService: AppService
+  ) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  getBlogDetailById(id) {
+    this.appService.getBlogDetailById(id).subscribe(data => {
+      console.log(data);
+      this.blog = data;
+    });
   }
 
+  delateBlogById(id) {
+    this.appService.deleteBlog(id).subscribe(
+      res => {
+        this.router.navigate(['/blog-list']);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
 }

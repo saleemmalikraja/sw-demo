@@ -1,3 +1,26 @@
-<p>
-  add-blog works!
-</p>
+<div class="button-row">
+  <a mat-fab color="primary" [routerLink]="['/blog-list']"><mat-icon>list</mat-icon></a>
+</div>
+<form [formGroup]="blogsForm" (ngSubmit)="onFormSubmit(blogsForm.value)">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Title" formControlName="title">
+    <mat-error>
+      <span *ngIf="!blogsForm.get('title').valid && blogsForm.get('title').touched">Please enter Blog Title</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Description" formControlName="blog_url"></textarea>
+    <mat-error>
+      <span *ngIf="!blogsForm.get('description').valid && blogsForm.get('blog_url').touched">Please enter URL</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Author" formControlName="author">
+    <mat-error>
+      <span *ngIf="!blogsForm.get('author').valid && blogsForm.get('author').touched">Please enter Blog Author</span>
+    </mat-error>
+  </mat-form-field>
+  <div class="button-row">
+    <button type="submit" [disabled]="!blogsForm.valid" mat-fab color="primary"><mat-icon>save</mat-icon></button>
+  </div>
+</form>

@@ -1,3 +1,23 @@
-<p>
-  blog-detail works!
-</p>
+<div class="button-row">
+  <a mat-fab color="primary" [routerLink]="['/blog-list']"><mat-icon>list</mat-icon></a>
+</div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title><h2>{{blog.title}}</h2></mat-card-title>
+    <mat-card-subtitle>{{blog.author}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <dl>
+      <dt>Title:</dt>
+      <dd>{{blog.title}}</dd>
+      <dt>Author:</dt>
+      <dd>{{blog.author}}</dd>
+      <dt>Blog URL:</dt>
+      <dd>{{blog.blog_url}}</dd>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-fab color="primary" [routerLink]="['/edit-blog', blog.key]"><mat-icon>edit</mat-icon></a>
+    <a mat-fab color="warn" (click)="delateBlogById(blog.key)"><mat-icon>delete</mat-icon></a>
+  </mat-card-actions>
+</mat-card>
