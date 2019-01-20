@@ -31,7 +31,7 @@ export class AddBlogComponent implements OnInit {
     this.appService.postBlog(form)
       .subscribe(res => {
           const id = res['key'];
-          this.router.navigate(['/boards-details', id]);
+          this.router.navigate(['/blog-detail', id]);
         }, (err) => {
           console.log(err);
         });

@@ -21,7 +21,8 @@ export class BlogDetailComponent implements OnInit {
     private appService: AppService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getBlogDetailById(this.route.snapshot.params['id']);}
 
   getBlogDetailById(id) {
     this.appService.getBlogDetailById(id).subscribe(data => {
@@ -30,7 +31,7 @@ export class BlogDetailComponent implements OnInit {
     });
   }
 
-  delateBlogById(id) {
+  deleteBlogById(id) {
     this.appService.deleteBlog(id).subscribe(
       res => {
         this.router.navigate(['/blog-list']);

@@ -1,7 +1,7 @@
 <div class="button-row">
   <a mat-fab color="primary" [routerLink]="['/blog-list']"><mat-icon>list</mat-icon></a>
 </div>
-<mat-card class="example-card">
+<mat-card class="example-card" *ngIf="blog?.key">
   <mat-card-header>
     <mat-card-title><h2>{{blog.title}}</h2></mat-card-title>
     <mat-card-subtitle>{{blog.author}}</mat-card-subtitle>
@@ -18,6 +18,6 @@
   </mat-card-content>
   <mat-card-actions>
     <a mat-fab color="primary" [routerLink]="['/edit-blog', blog.key]"><mat-icon>edit</mat-icon></a>
-    <a mat-fab color="warn" (click)="delateBlogById(blog.key)"><mat-icon>delete</mat-icon></a>
+    <a mat-fab color="warn" (click)="deleteBlogById(blog.key)"><mat-icon>delete</mat-icon></a>
   </mat-card-actions>
 </mat-card>

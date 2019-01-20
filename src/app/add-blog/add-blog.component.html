@@ -9,9 +9,9 @@
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Description" formControlName="blog_url"></textarea>
+    <textarea matInput placeholder="URL" formControlName="blog_url"></textarea>
     <mat-error>
-      <span *ngIf="!blogsForm.get('description').valid && blogsForm.get('blog_url').touched">Please enter URL</span>
+      <span *ngIf="!blogsForm.get('blog_url').valid && blogsForm.get('blog_url').touched">Please enter URL</span>
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
