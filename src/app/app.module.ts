@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BlogListComponent } from './blog-list/blog-list.component';
+import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BlogListComponent
+    BlogListComponent,
+    BlogDetailComponent
   ],
   imports: [
     BrowserModule,
