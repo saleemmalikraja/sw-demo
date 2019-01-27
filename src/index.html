@@ -9,16 +9,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="manifest" type="application/json" href="manifest.json">
-  
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
   <script>
     var OneSignal = window.OneSignal || [];
     OneSignal.push(function () {
-      OneSignal.init({
-        appId: "3af8727a-dfb0-4d00-ac2c-5b212bd83f82",
-      });
+      if (window.location.hostname.includes('sw-demo')) {
+        OneSignal.init({
+          appId: "cf24eb95-e4db-4b55-bd1d-11df142ffae6",
+        });
+      } else {
+        OneSignal.init({
+          appId: "3af8727a-dfb0-4d00-ac2c-5b212bd83f82",
+        });
+      }
+
     });
   </script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
